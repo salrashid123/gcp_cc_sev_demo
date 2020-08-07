@@ -15,7 +15,7 @@ The purpose is to simulate private page's view from outside of the VM. The encry
 This article is inspired in part by [Using AMD Secure Memory Encryption with Oracle Linux](https://blogs.oracle.com/linux/using-amd-secure-memory-encryption-with-oracle-linux)
 
 References:
-- [AMD SEV-SNP](https://www.amd.com/system/files/TechDocs/SEV-SNP-strengthening-vm-isolation-with-integrity-protection-and-more.pdf)
+- [AMD SEV](https://developer.amd.com/sev/)
 
 
 ![images/sev_memory.png](images/sev_memory.png)
