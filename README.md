@@ -33,17 +33,16 @@ to restate, the kernel module demonstrates set/unset C-bit for SEV demo, this mo
 ### Create Confidential Compute VM
 
 ```bash
-gcloud beta compute  instances create cc-1 \
-  --zone=us-central1-a --machine-type=n2d-standard-2 \
-  --confidential-compute \
-  --subnet=default --network-tier=PREMIUM --maintenance-policy=TERMINATE \
-  --no-service-account --no-scopes --image=ubuntu-1804-bionic-v20200716 \
-  --image-project=confidential-vm-images
+gcloud compute instances create cc-1 \
+  --machine-type=n2d-standard-2  --zone "us-central1-a" \
+    --confidential-compute --maintenance-policy=TERMINATE
 ```
 
 Verify
 
 ```bash
+gcloud compute ssh cc-1
+
 # dmesg | grep AMD | grep SEV
 [    0.938565] AMD Secure Encrypted Virtualization (SEV) active
 ```
