@@ -58,7 +58,7 @@ static long sevtest_ioctl(struct file *file, unsigned int cmd, unsigned long sec
     pte_t *pte = NULL;
 
     // ensure SEV is enabled in guest VM
-    if (!mem_encrypt_active())
+    if (!cc_platform_has(CC_ATTR_GUEST_MEM_ENCRYPT))
     {
         printk(KERN_ERR"SEVTEST: Looks like SEV is not enabled!!\n");
         return -ENXIO;

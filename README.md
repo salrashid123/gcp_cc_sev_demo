@@ -35,7 +35,8 @@ to restate, the kernel module demonstrates set/unset C-bit for SEV demo, this mo
 ```bash
 gcloud compute instances create cc-1 \
   --machine-type=n2d-standard-2  --zone "us-central1-a" \
-    --confidential-compute --maintenance-policy=TERMINATE
+    --confidential-compute --maintenance-policy=TERMINATE --no-service-account --no-scopes \
+     --image-family=ubuntu-2204-lts   --image-project=confidential-vm-images
 ```
 
 Verify
@@ -52,7 +53,7 @@ Install components and linux headers
 ```bash
 sudo su -
 apt-get update
-apt-get install -y gcc build-essential linux-headers-$(uname -r) git
+apt-get install -y gcc-12 build-essential linux-headers-$(uname -r) git
 
 git clone https://github.com/salrashid123/gcp_cc_sev_demo.git
 cd gcp_cc_sev_demo/
